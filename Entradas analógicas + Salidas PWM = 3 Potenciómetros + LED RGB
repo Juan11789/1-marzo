@@ -1,0 +1,33 @@
+int r1;
+int r2;
+int red = 6;
+int g1;
+int g2;
+int green = 5;
+int b1;
+int b2;
+int blue = 3;
+
+void setup() {
+ Serial.begin(9600);
+pinMode(red,OUTPUT);
+pinMode(green,OUTPUT);
+pinMode(blue,OUTPUT);
+}
+
+void loop() {
+ r1 = analogRead(A0);
+ r2 = map(r1,0,1023,0,255);
+ Serial.println(r2);
+analogWrite(red,r2);
+
+ g1 = analogRead(A1);
+ g2 = map(g1,0,1023,0,255);
+ Serial.println(g2);
+analogWrite(green,g2);
+
+ b1 = analogRead(A2);
+ b2 = map(b1,0,1023,0,255);
+ Serial.println(b2);
+analogWrite(blue,b2);
+}
